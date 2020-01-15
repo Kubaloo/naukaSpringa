@@ -5,7 +5,15 @@
     <title>Student confirmation</title>
 </head>
 <body>
-<p th:text="'Hello, ' + ${student.firstName} + ${student.lastName} + '!'" />
-
+    <p th:text="'Hello, ' + ${student.firstName} + ${student.lastName} + '!'"/>
+    <br><br>
+    <p th:text="'Country, ' + ${student.country}+ '!'"/>
+    <br><br>
+    <p th:text="'Language, ' + ${student.favoriteLanguage}+ '!'"/>
+    <br><br>
+    Operating systems:
+    <ul th:each="system : ${student.operatingSystems}">
+        <li th:text="${system}"></li>
+    </ul>
 </body>
 </html>

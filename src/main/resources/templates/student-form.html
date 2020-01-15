@@ -9,6 +9,28 @@
 <form action="/student/processForm" th:action="@{processForm}" th:object="${student}">
     <p>Id: <input type="text" th:field="*{firstName}" /></p>
     <p>Message: <input type="text" th:field="*{lastName}" /></p>
+
+    <br><br>
+
+    Country:
+
+    <select th:field="*{country}">
+        <option th:each="country : ${student.countryOptions}" th:value="${country.key}" th:text="${country.value}"></option>
+    </select>
+
+    <br><br>
+    Favorite language:
+
+    Java <input type="radio" th:field="${student.favoriteLanguage}" th:value="Java" />
+    PHP <input type="radio" th:field="${student.favoriteLanguage}" th:value="PHP" />
+    Ruby <input type="radio" th:field="${student.favoriteLanguage}" th:value="Ruby" />
+
+    <br><br>
+    Operating Systems:
+    Linux <input type="checkbox" th:field="${student.operatingSystems}" th:value="Linux">
+    Windows <input type="checkbox" th:field="${student.operatingSystems}" th:value="Windows">
+    MacOS <input type="checkbox" th:field="${student.operatingSystems}" th:value="MacOS">
+
     <p><input type="submit" value="Submit" /> </p>
 </form>
 </body>
