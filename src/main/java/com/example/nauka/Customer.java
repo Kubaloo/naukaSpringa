@@ -1,9 +1,13 @@
 package com.example.nauka;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.*;
 
+@Entity
 public class Customer {
 
+    @Id
     private String firstName;
 
     @NotNull(message = "is required")

@@ -1,69 +1,49 @@
 package com.example.nauka;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.LinkedHashMap;
 
+@Entity
 public class Student {
+    @Id
+    private int id;
+    private String first_name;
+    private String last_name;
+    private String email;
 
-    private String firstName;
-    private String lastName;
-    private String country;
-    private LinkedHashMap<String, String> countryOptions;
-    private String favoriteLanguage;
-    private String[] operatingSystems;
-
-    public String[] getOperatingSystems() {
-        return operatingSystems;
+    public int getId() {
+        return id;
     }
 
-    public void setOperatingSystems(String[] operatingSystems) {
-        this.operatingSystems = operatingSystems;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getFavoriteLanguage() {
-        return favoriteLanguage;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFavoriteLanguage(String favoriteLanguage) {
-        this.favoriteLanguage = favoriteLanguage;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public LinkedHashMap<String, String> getCountryOptions() {
-        return countryOptions;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setCountryOptions(LinkedHashMap<String, String> countryOptions) {
-        this.countryOptions = countryOptions;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public Student() {
-        countryOptions = new LinkedHashMap<>();
-        countryOptions.put("BR", "Brazil");
-        countryOptions.put("FR", "France");
-        countryOptions.put("DE", "Germany");
-        countryOptions.put("PL", "Poland");
+    public String getEmail() {
+        return email;
     }
 
-    public String getCountry() {
-        return country;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public Student(){
     }
 }
